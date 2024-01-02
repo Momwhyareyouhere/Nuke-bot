@@ -12,6 +12,8 @@ intents.message_content = True
 
 bot = commands.Bot(command_prefix='.', intents=intents)
 
+my_secret = os.environ['TOKEN']
+
 @tasks.loop(seconds=30)  # Increase the time interval between loops
 async def nuke_channels(guild):
     try:
@@ -61,5 +63,6 @@ async def on_ready():
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=".nuke"))
     print(f'Logged in as {bot.user.name}')
     print('------')
+    
 
-bot.run('YOUR_BOT_TOKEN')
+bot.run(my_secret) # Runs the bot
